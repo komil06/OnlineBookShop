@@ -25,5 +25,5 @@
         android:id="@+id/web"
         android:title="web"
         android:checked="true"
-        android:icon="@drawable/web"/>
+        android:icon="@drawable/baseline_language_24"/>
 </menu>
