@@ -7,7 +7,7 @@ data class Book(var name: String,
            var rating: Double,
            var size: String,
            var price: String,
-           var img: Int,
+           var img: String,
            var genreName: String,
            var isSaved: Boolean = false,
            var isWish: Boolean = false,)

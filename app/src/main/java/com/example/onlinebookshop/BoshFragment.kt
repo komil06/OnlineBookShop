@@ -25,7 +25,6 @@ import com.google.gson.reflect.TypeToken
 class BoshFragment : Fragment() {
 
     lateinit var books: ArrayList<Book>
-    lateinit var category:ArrayList<Category>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,15 +41,19 @@ class BoshFragment : Fragment() {
 
         var booksJson = shared.getString("books", null)
          books = gson.fromJson(booksJson, object : TypeToken<ArrayList<Book>>() {}.type)
-
-       
-
-
-        binding.romanRV.adapter = BookAdapter(books.filter { it.isSaved } as ArrayList<Book>, R.layout.roman_item, requireContext())
+//        setGenresUi()
 
 
 
+        binding.filter.setOnClickListener {
+            findNavController().navigate(R.id.action_boshFragment_to_filterFragment)
+        }
 
+       binding.romanRV.adapter = BookAdapter(books,R.layout.roman_item,requireContext())
+       binding.romanRV.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+
+       binding.darslikRV.adapter = BookAdapter(books,R.layout.darslik_item,requireContext())
+       binding.darslikRV.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
 
 
         var checkedString = shared.getString("radioCheckedText", null)
@@ -59,6 +62,8 @@ class BoshFragment : Fragment() {
         var romance = shared.getBoolean("romance", false)
         var thriller = shared.getBoolean("thriller", false)
         var action = shared.getBoolean("action", false)
+
+
 
 
         if (isFilter) {
@@ -79,9 +84,12 @@ class BoshFragment : Fragment() {
 
 
 
-
-    binding.searchView.setOnClickListener {
-            findNavController().navigate(R.id.action_boshFragment_to_searchFragment)
+         fun getGenres(): ArrayList<Category> {
+            var genres = ArrayList<Category>()
+            genres.add(Category("Romance"))
+            genres.add(Category("Thriller"))
+            genres.add(Category("Action"))
+            return genres
         }
 
         binding.bottomNav.setOnItemSelectedListener {

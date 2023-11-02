@@ -31,7 +31,7 @@ class BookApi(context: Context) {
                 4.7,
                 "5.6 mb",
                 "$7.50",
-                R.drawable.img_5,
+                "R.drawable.img_5",
                 "Darslik",
                 false
             )
@@ -46,7 +46,7 @@ class BookApi(context: Context) {
                 4.9,
                 "6.9 mb",
                 "$8.50",
-                R.drawable.img_7,
+                "R.drawable.img_7",
                 "Romance",
                 false
             )
@@ -61,7 +61,7 @@ class BookApi(context: Context) {
                 4.9,
                 "6.9 mb",
                 "$8.50",
-                R.drawable.img_3,
+                "R.drawable.img_3",
                 "Action",
                 false
             )
@@ -76,7 +76,7 @@ class BookApi(context: Context) {
                 4.1,
                 "5.6 mb",
                 "$10.50",
-                R.drawable.img_4,
+                "R.drawable.img_4",
                 "Romance",
                 false
             )
@@ -91,7 +91,7 @@ class BookApi(context: Context) {
                 4.2,
                 "6.9 mb",
                 "$8.50",
-                R.drawable.img_5,
+                "R.drawable.img_5",
                 "Action",
                 false
             )
@@ -106,7 +106,7 @@ class BookApi(context: Context) {
                 4.3,
                 "5.6 mb",
                 "$11.50",
-                R.drawable.img_3,
+                "R.drawable.img_3",
                 "Romance",
                 false
             )

@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.onlinebookshop.R
 import com.example.onlinebookshop.model.Book
 import com.google.android.material.imageview.ShapeableImageView
@@ -21,7 +23,8 @@ class BookAdapter(
 ) : RecyclerView.Adapter<BookAdapter.MyHolder>() {
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name = itemView.findViewById<TextView>(R.id.book_name)
-        var img = itemView.findViewById<ShapeableImageView>(R.id.book_img)
+        var img = itemView.findViewById<ImageView>(R.id.book_img)
+        var author = itemView.findViewById<TextView>(R.id.book_author_name)
         var rating = itemView.findViewById<TextView>(R.id.star_rate)
     }
 
@@ -40,9 +43,8 @@ class BookAdapter(
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         var book = books[position]
         holder.name.text = book.name
-        holder.img.setImageResource(book.img)
         holder.rating.text = book.rating.toString()
-
+        holder.author.text = book.author
         val anim = AnimationUtils.loadAnimation(context, R.anim.item_anim)
         holder.itemView.startAnimation(anim)
 

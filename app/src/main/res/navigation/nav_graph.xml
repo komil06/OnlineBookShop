@@ -58,10 +58,44 @@
         <action
             android:id="@+id/action_boshFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_boshFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_boshFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.onlinebookshop.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.onlinebookshop.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.example.onlinebookshop.BookDetailFragment"
+        android:label="fragment_book_detail"
+        tools:layout="@layout/fragment_book_detail" >
+
+        <action
+            android:id="@+id/action_bookDetailFragment_to_bookDetailAudioFragment"
+            app:destination="@id/bookDeatailAudioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDeatailAudioFragment"
+        android:name="com.example.onlinebookshop.BookDetailAudioFragment"
+        android:label="fragment_book_deatail_audio"
+        tools:layout="@layout/fragment_book_detail_audio" >
+        <action
+            android:id="@+id/action_bookDetailAudioFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
 </navigation>

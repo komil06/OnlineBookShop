@@ -11,10 +11,10 @@ import com.example.onlinebookshop.model.Category
 class CategoryAdapter(var list: MutableList<Category>):
     RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
     class CategoryHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-          var name:TextView = itemView.findViewById(R.id.itemName)
+          var name:TextView = itemView.findViewById(R.id.book_name)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryAdapter.CategoryHolder {
-        val holder = CategoryHolder(LayoutInflater.from(parent.context).inflate(R.layout.category_item,parent,false))
+        val holder = CategoryHolder(LayoutInflater.from(parent.context).inflate(R.layout.seach_item,parent,false))
         return holder
     }
 

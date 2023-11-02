@@ -48,27 +48,63 @@
     </LinearLayout>
 
 
+    <!--    <SearchView-->
+    <!--        android:id="@+id/searchView2"-->
+    <!--        android:layout_width="390dp"-->
+    <!--        android:layout_height="70dp"-->
+    <!--        android:layout_marginLeft="10dp"-->
+    <!--        android:layout_marginTop="1dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginTop="518dp"
+        android:layout_marginTop="305dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView2"
+        app:layout_constraintTop_toBottomOf="@+id/searchRV"
         app:menu="@menu/bottom_menu" />
 
-    <SearchView
-        android:id="@+id/searchView2"
-        android:layout_width="390dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="1dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editLay"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="1.5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Qidirish..."
+            android:imeOptions="actionDone"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLay" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

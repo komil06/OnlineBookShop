@@ -58,27 +58,24 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/category_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:listitem="@layout/category_item" />
 
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/filter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/category_rv" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/filter"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
@@ -90,6 +87,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="219dp">
 
@@ -98,8 +96,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="Romanlar"
                 android:layout_marginTop="10dp"
+                android:text="Romanlar"
                 android:textColor="#0F1D4D"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -110,9 +108,9 @@
                 android:id="@+id/seeAllRomans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Barchasini ko'rish"
-                android:layout_marginTop="13dp"
                 android:layout_marginLeft="80dp"
+                android:layout_marginTop="13dp"
+                android:text="Barchasini ko'rish"
                 android:textColor="#B8E8F2"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -138,12 +136,12 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:text="Darsliklar"
                 android:textColor="#0F1D4D"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/romanRV" />
 
@@ -151,12 +149,12 @@
                 android:id="@+id/seeAllDarsliklar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="13dp"
                 android:text="Barchasini ko'rish"
                 android:textColor="#B8E8F2"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView13"
                 app:layout_constraintTop_toBottomOf="@+id/romanRV" />
@@ -165,9 +163,9 @@
                 android:id="@+id/darslikRV"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView13"
@@ -176,8 +174,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
